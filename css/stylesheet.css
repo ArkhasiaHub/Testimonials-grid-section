@@ -11,24 +11,31 @@ body {
 .all-testimonials {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 0.8fr 0.7fr 1.2fr 1fr;
+    grid-auto-rows: minmax(160px, auto);
     gap: 40px;
 }
 
 .testimonial {
     max-width: 400px;
-    min-height: fit-content;
+    min-height: 0;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
     font-family: 'Barlow Semi Condensed';
     font-weight: 500;
 }
 
+.testimonial-paragraph {
+  flex: 1 1 auto;
+  overflow: auto;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
 .testimonial .profile {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
@@ -47,11 +54,26 @@ body {
 
 .testimonial h2 {
     font-weight: 600;
+    font-size: 30px;
+}
+
+.testimonial .name {
+    font-size: 18px;
+}
+
+.testimonial .check-graduate {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .testimonial#testimonial-daniel {
     background-color: hsl(263, 55%, 52%);
     color: hsl(214, 17%, 92%);
+    grid-row: span 3;
+}
+
+#testimonial-daniel .check-graduate {
+    color: hsl(0, 0%, 81%);
 }
 
 .testimonial#testimonial-daniel .testimonial-paragraph {
@@ -67,6 +89,10 @@ body {
     color: hsl(0, 0%, 81%);
 }
 
+#testimonial-jonathan .check-graduate {
+    color: hsl(0, 0%, 81%);
+}
+
 .testimonial#testimonial-jeanette {
     background-color: hsl(214, 17%, 92%);
     color: hsl(217, 19%, 35%);
@@ -74,6 +100,10 @@ body {
 
 .testimonial#testimonial-jeanette .testimonial-paragraph {
     color: hsl(217, 19%, 35%);
+}
+
+#testimonial-jeanette .check-graduate {
+    color: hsl(224, 10%, 45%);
 }
 
 .testimonial#testimonial-patrick {
@@ -85,10 +115,56 @@ body {
     color: hsl(0, 0%, 81%);
 }
 
+#testimonial-patrick .check-graduate {
+    color: hsl(0, 0%, 81%);
+}
+
 .testimonial#testimonial-kira {
     background-color: hsl(214, 17%, 92%);
 }
 
 .testimonial#testimonial-kira .testimonial-paragraph {
     color: hsl(224, 10%, 45%);
+}
+
+#testimonial-kira .check-graduate {
+    color: hsl(224, 10%, 45%);
+}
+
+@media (min-width: 1024px) {
+    .all-testimonials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .testimonial {
+        max-width: none;
+    }
+
+    .testimonial#testimonial-daniel {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    .testimonial#testimonial-jonathan {
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+    }
+
+    .testimonial#testimonial-jeanette {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    .testimonial#testimonial-patrick {
+        grid-row: 2 / 3;
+        grid-column: 2 / 4;
+    }
+
+    .testimonial#testimonial-kira {
+        grid-row: 1 / 3;
+        grid-column: 4 / 5;
+    }
 }
