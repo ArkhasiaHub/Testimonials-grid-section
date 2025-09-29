@@ -24,7 +24,6 @@ body {
     border-radius: 12px;
     font-family: 'Barlow Semi Condensed';
     font-weight: 500;
-    box-shadow: 1px 1px 10px hsl(219, 29%, 14%);
 }
 
 .testimonial-paragraph {
@@ -122,6 +121,7 @@ body {
 
 .testimonial#testimonial-kira {
     background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%);
 }
 
 .testimonial#testimonial-kira .testimonial-paragraph {
